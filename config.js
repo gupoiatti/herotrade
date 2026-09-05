@@ -12,4 +12,4 @@
  *
  * Sem barra no fim.
  */
-window.HEROTRADE_API = "https://virgin-medicines-reviewed-bag.trycloudflare.com";
+window.HEROTRADE_API = "https://bacterial-restaurant-aerial-cheap.trycloudflare.com";
