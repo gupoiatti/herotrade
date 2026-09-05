@@ -542,10 +542,6 @@ function desenharConteudo(alvo, mult) {
         esc(v.nome) + "</button>";
     }).join("") + "</div></div>";
 
-  const notas = s.variante.notas.length === 0 ? "" :
-    '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-left:auto">' +
-    s.variante.notas.map(function (n) { return '<span class="nota">' + esc(n) + "</span>"; }).join("") + "</div>";
-
   const corpo = s.linhas.map(function (l) {
     return "<tr><td class=\"esq nome\">" + esc(l.drop.nome) +
       '<span class="sub">' + esc(l.drop.grupo || "") + "</span></td>" +
@@ -570,13 +566,19 @@ function desenharConteudo(alvo, mult) {
       '<label class="campo">' + (c.tipo === "mvp" ? "Runs em 30 min" : "Abates em 30 min") +
       ' <input type="number" id="ritmo" min="0" step="1" value="' + s.tentativas +
       '" style="width:76px;border-color:#f0b42955;color:var(--ouro)"></label>' +
-      // De onde veio este número: medido, digitado, ou o palpite do arquivo.
-      '<span class="nota">' + esc(
-        daMao ? "ajustado à mão"
-          : medido !== null
-            ? "medido em " + medido.runs + (medido.runs === 1 ? " gravação" : " gravações")
-            : "estimativa"
-      ) + "</span>" + notas + "</div>" +
+      // Dizer "estimativa" e parar aí deixava o leitor sem saída. O que ele
+      // pode fazer a respeito é subir uma gravação, então o lugar da etiqueta é
+      // do botão que leva até lá. Quando já há medição, aí sim vale dizer de
+      // onde o número veio.
+      (daMao
+        ? '<span class="nota">ajustado à mão</span>'
+        : medido !== null
+          ? '<span class="nota">medido em ' + medido.runs +
+            (medido.runs === 1 ? " gravação" : " gravações") + "</span>"
+          : "") +
+      '<button class="pilula" id="medir" title="Ler uma gravação do jogo e usar o ritmo dela">' +
+      (medido === null ? "medir com um replay" : "somar outra gravação") + "</button>" +
+      "</div>" +
 
     '<div class="resumo">' +
       '<div><div class="rotulo">' + MOEDA_NOME + ' em 30 min</div>' +
@@ -603,6 +605,7 @@ function desenharConteudo(alvo, mult) {
 
     '<button class="voltar" id="voltar">Voltar ao ranking</button>';
 
+  $("medir").onclick = function () { estado.view = "replay"; desenhar(); };
   $("ritmo").onchange = function (e) {
     estado.ritmo[c.id] = Math.max(0, Number(e.target.value) || 0);
     desenhar();
@@ -766,7 +769,6 @@ function desenharReplay() {
   const conteudo = conteudoDoMapa(r.sessao.mapa);
   const curta = amostraCurta(r.janelaMs);
   const ritmo = porJanela(r.abates, r.janelaMs);
-  const deOutros = r.abatesNaTela - r.abates;
 
   // Reconhecido, o nome do conteúdo já está no título e repetir aqui é ruído.
   // Não reconhecido, esta é a única forma de dizer de onde a gravação é.
@@ -812,19 +814,13 @@ function desenharReplay() {
         : "") +
 
     '<div class="resumo">' +
-      '<div><div class="rotulo">Abates seus</div>' +
+      '<div><div class="rotulo">Abates</div>' +
         '<div class="n ouro">' + num(r.abates) + "</div></div>" +
       '<div class="divisor"></div>' +
       '<div><div class="rotulo">Abates em 30 min</div>' +
         '<div class="n ' + (curta ? "off" : "ouro") + '">' +
         (ritmo === null ? "—" : num(ritmo)) + "</div></div>" +
-      '<div class="divisor"></div>' +
-      '<div class="sub">' +
-        (deOutros > 0
-          ? num(r.abatesNaTela) + " morreram por perto, " + num(deOutros) +
-            " no golpe de outra pessoa<br>o ritmo conta só o que foi seu"
-          : "todos os monstros que morreram por perto foram seus") +
-      "</div></div>" +
+      "</div>" +
 
     (conteudo
       ? '<div class="aviso-rodape">Guardar faz a aba <strong>' +
