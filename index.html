@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HeroTrade</title>
+
+<!--
+  A página é só o esqueleto: quatro caixas vazias que o `tela.js` preenche.
+  Mexer no nome delas quebra o desenho, porque é por `id` que ele as acha.
+
+  As fontes precisam de internet: sem ela, as famílias de reserva entram e a
+  tela continua legível, só com outra cara. É a única dependência externa.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pagina.css">
+</head>
+<body>
+
+<div class="faixa">
+  <div class="topo">
+    <div>
+      <div class="logo">HERO<span>/</span>TRADE</div>
+    </div>
+    <div class="caixa-sync">
+      <div class="rotulo">Última sincronização</div>
+      <div class="valor-sync" id="sync">—</div>
+    </div>
+  </div>
+  <div id="alerta"></div>
+  <div id="controles"></div>
+  <div class="abas" id="abas"></div>
+</div>
+
+<div class="faixa" id="painel"></div>
+
+<script src="config.js"></script>
+<script type="module" src="tela.js"></script>
+</body>
+</html>

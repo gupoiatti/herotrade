@@ -1,0 +1,168 @@
+/* Estilo da tela. O esqueleto está em pagina.html; o desenho, em tela.js. */
+
+  :root {
+    --fundo:#0a0c10; --texto:#eef1f6; --fraco:#8b95a7; --apagado:#5d6779;
+    --borda:#222937; --borda2:#171d27; --painel:#11151c; --campo:#151a23;
+    --ouro:#f0b429; --ouro2:#ffd166; --claro:#d8dfea; --vermelho:#ff4d5e;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --titulo:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--fundo); color:var(--texto);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    background-image:radial-gradient(1200px 500px at 15% -10%, #16202e 0%, var(--fundo) 60%);
+    background-repeat:no-repeat; min-height:100vh; padding-bottom:72px;
+  }
+  a { color:var(--ouro); text-decoration:none; }
+  a:hover { color:var(--ouro2); }
+  ::selection { background:#f0b42933; }
+
+  .faixa { max-width:1180px; margin:0 auto; padding:0 28px; }
+  .topo { padding-top:28px; display:flex; justify-content:space-between;
+          align-items:flex-start; gap:24px; flex-wrap:wrap; }
+  .logo { font-family:var(--titulo); font-weight:800; font-size:52px;
+          letter-spacing:-.03em; line-height:1; }
+  .logo span { color:var(--ouro); }
+  .caixa-sync { padding:10px 16px; border:1px solid var(--borda); border-radius:10px;
+                background:#11151cc0; }
+  .rotulo { font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--fraco); }
+  .valor-sync { font-family:var(--mono); font-size:16px; font-weight:600; }
+
+  .alerta { margin-top:16px; padding:12px 14px; border:1px solid #ff4d5e55;
+            border-left:3px solid var(--vermelho); border-radius:8px;
+            background:#ff4d5e12; font-size:13px; color:#ffb3ba; }
+  .alerta strong { color:#ff8f9a; }
+
+  .controles { display:flex; align-items:stretch; gap:14px; flex-wrap:wrap; margin-top:18px; }
+  .painel-taxa { display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+                 padding:12px 16px; border:1px solid var(--borda); border-radius:10px;
+                 background:#11151c80; flex:1 1 640px; min-height:87px; }
+  .divisor { width:1px; align-self:stretch; background:var(--borda); }
+  label.campo { display:flex; align-items:center; gap:8px; font-size:12.5px;
+                color:var(--fraco); white-space:nowrap; }
+  select, input[type=number] {
+    font:inherit; font-size:12.5px; font-weight:600; padding:6px 10px; border-radius:8px;
+    border:1px solid var(--borda); background:var(--campo); color:var(--texto); cursor:pointer;
+  }
+  /* O design aperta o campo numérico um pouco mais que o select. */
+  input[type=number] { font-family:var(--mono); cursor:text; padding:6px 8px; }
+  /* Ascensão e Consumíveis andam juntos: no design eles não se separam. */
+  .par { display:flex; align-items:center; gap:18px; flex-wrap:nowrap; }
+  select:disabled { color:#454f60; cursor:not-allowed; }
+  button { font:inherit; cursor:pointer; }
+  .pilula { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600;
+            padding:7px 12px; border-radius:8px; border:1px solid var(--borda);
+            background:transparent; color:var(--fraco); }
+  .pilula.on { border-color:#f0b42966; background:#f0b4291f; color:var(--ouro); }
+  .ponto { width:8px; height:8px; border-radius:99px; background:currentColor; }
+  .bonus { display:flex; align-items:center; gap:14px; padding:12px 22px;
+           border:1px solid #f0b42933; border-radius:10px; background:#f0b4290d; }
+  .bonus b { font-family:var(--mono); font-size:46px; font-weight:600; color:var(--ouro);
+             line-height:1; letter-spacing:-.02em; }
+
+  .menu-cons { position:relative; display:flex; align-items:center; gap:8px;
+               font-size:12.5px; color:var(--fraco); white-space:nowrap; }
+  .lista-cons { position:absolute; top:100%; left:0; margin-top:8px; width:330px; padding:6px;
+                border:1px solid #2b3444; border-radius:10px; background:#141922;
+                box-shadow:0 18px 40px #00000080; z-index:20; display:flex;
+                flex-direction:column; gap:2px; }
+  .lista-cons button { display:flex; align-items:center; gap:10px; text-align:left;
+                       font-size:12.5px; padding:9px 10px; border-radius:7px; border:none;
+                       background:transparent; color:#b9c2d0; width:100%; }
+  .lista-cons button:hover:not(:disabled) { background:#1c2330; }
+  .lista-cons button:disabled { color:#454f60; cursor:not-allowed; }
+  .lista-cons .marca { width:14px; height:14px; border-radius:4px; border:1px solid #3a4557;
+                       flex-shrink:0; }
+  .lista-cons .nome { flex:1; white-space:normal; line-height:1.35; }
+  .lista-cons .val { font-family:var(--mono); font-weight:600; color:var(--fraco); }
+  .rodape-cons { padding:8px 10px 4px; border-top:1px solid var(--borda); margin-top:4px;
+                 font-size:11px; color:var(--apagado); white-space:normal; line-height:1.5; }
+
+  .abas { display:flex; gap:2px; flex-wrap:wrap; margin-top:20px;
+          border-bottom:1px solid var(--borda); }
+  .abas button { font-size:13.5px; font-weight:600; border:none;
+                 border-bottom:2px solid transparent; border-radius:8px 8px 0 0;
+                 background:none; padding:11px 15px; color:var(--fraco);
+                 display:flex; align-items:center; gap:8px; }
+  .abas button:hover { background:#151a2380; }
+  .abas button.ativa { color:var(--texto); border-bottom-color:var(--ouro); }
+  .abas .selo { font-family:var(--mono); font-size:11px; font-weight:500; color:var(--fraco); }
+
+  h2.secao { font-family:var(--titulo); font-size:22px; font-weight:700; margin:0;
+             letter-spacing:-.01em; }
+  .cabeca-secao { display:flex; justify-content:space-between; align-items:flex-end;
+                  gap:20px; flex-wrap:wrap; margin:26px 0 4px; }
+  .criterio { color:var(--fraco); font-size:12.5px; font-family:var(--mono); }
+
+  .grade-rank { display:grid; grid-template-columns:34px minmax(190px,1.4fr) 1fr 170px;
+                gap:14px; align-items:center; }
+  .cabeca-rank { padding:14px 4px 10px; border-bottom:1px solid var(--borda);
+                 font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+                 color:var(--fraco); }
+  .linha-rank { padding:16px 4px; border-bottom:1px solid var(--borda2); cursor:pointer;
+                width:100%; background:none; border-left:none; border-right:none;
+                border-top:none; text-align:left; color:inherit; font:inherit; }
+  .linha-rank:hover { background:#11151c99; }
+  .pos { font-family:var(--mono); font-size:19px; font-weight:600; color:var(--apagado); }
+  .pos.primeiro { color:var(--ouro); }
+  .nome-conteudo { font-family:var(--titulo); font-size:16.5px; font-weight:700;
+                   letter-spacing:-.01em; }
+  .legenda { color:var(--fraco); font-size:12px; margin-top:3px; font-family:var(--mono); }
+  .trilho { height:8px; border-radius:99px; background:var(--borda2); overflow:hidden; }
+  .barra { height:100%; border-radius:99px; background:linear-gradient(90deg,var(--ouro),var(--ouro2)); }
+  .primaria { text-align:right; font-family:var(--mono); font-size:19px; font-weight:600;
+              color:var(--ouro); }
+
+  .grupo-botoes { display:flex; gap:4px; padding:3px; border:1px solid var(--borda);
+                  border-radius:9px; background:var(--painel); }
+  .grupo-botoes button { font-size:12.5px; font-weight:600; padding:7px 12px;
+                         border-radius:7px; border:none; background:transparent;
+                         color:var(--fraco); }
+  .grupo-botoes button.on { background:#f0b4291f; color:var(--ouro); }
+
+  .barra-conteudo { display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+                    padding:12px 16px; border:1px solid var(--borda); border-radius:10px;
+                    background:#11151c80; }
+  .nota { font-size:11.5px; color:#b9c2d0; padding:5px 9px; border:1px solid var(--borda);
+          border-radius:99px; background:var(--campo); }
+  /* Uma faixa só, não três cartões: o design tirou "Raros em 30 min" e pôs o
+     total da moeda em destaque, com o resto como legenda ao lado. */
+  .resumo { display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+            padding:16px 20px; border:1px solid var(--borda); border-radius:12px;
+            background:linear-gradient(180deg,var(--campo),var(--painel)); margin-top:12px; }
+  .resumo .n { font-family:var(--mono); font-size:38px; font-weight:600;
+               margin-top:4px; line-height:1; }
+  .resumo .sub { font-size:12.5px; color:var(--fraco); font-family:var(--mono);
+                 line-height:1.6; }
+
+  table { border-collapse:collapse; width:100%; margin-top:22px; }
+  th { text-align:right; padding:12px 10px; border-bottom:1px solid var(--borda);
+       font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+       color:var(--fraco); font-weight:600; }
+  th.esq, td.esq { text-align:left; }
+  td { text-align:right; padding:13px 10px; border-bottom:1px solid var(--borda2);
+       font-family:var(--mono); font-size:13.5px; color:var(--claro); }
+  td.nome { font-family:inherit; font-size:14px; color:var(--texto); }
+  td .sub { display:block; font-family:var(--mono); font-size:11px; color:var(--apagado);
+            margin-top:3px; }
+  tbody tr:hover { background:#11151c99; }
+  tfoot td { border-bottom:none; border-top:2px solid var(--borda); padding:14px 10px; }
+  .ouro { color:var(--ouro); }
+  .rosa { color:#fb7185; }
+  .off { color:var(--apagado); }
+  .aviso-rodape { margin-top:18px; font-size:12px; color:var(--apagado); max-width:80ch;
+                  text-wrap:pretty; }
+  .voltar { font-size:13px; font-weight:600; padding:10px 14px; border-radius:8px;
+            border:1px solid var(--borda); background:none; color:var(--fraco);
+            margin-top:20px; }
+  .voltar:hover { color:var(--texto); }
+
+  /* O design é de tela larga: 52px de logo ocupa o celular inteiro, e a tabela
+     de seis colunas não cabe em 375px. Encolher o título e deixar a tabela
+     rolar sozinha resolve os dois sem mexer no desenho no desktop. */
+  .rolagem { overflow-x:auto; }
+  @media (max-width:720px) {
+    .logo { font-size:34px; }
+    .faixa { padding:0 16px; }
+  }
