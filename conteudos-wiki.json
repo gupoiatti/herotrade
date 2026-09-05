@@ -1,0 +1,686 @@
+{
+  "_nota": "Conteudos e chances da wiki do Hero Saga. Fonte unica: a pagina desenha a partir daqui e o coletor decide o que buscar a partir daqui. Os ritmoPadrao (abates por 30 min) sao estimativa e podem ser ajustados na tela.",
+  "conteudos": [
+    {
+      "id": "cheffenia",
+      "nome": "Cheffênia",
+      "tipo": "farm",
+      "ritmoPadrao": 300,
+      "rotuloVariante": "Dificuldade",
+      "variantes": [
+        {
+          "id": "normal",
+          "nome": "Normal",
+          "notas": [
+            "Nível de dificuldade original"
+          ],
+          "drops": [
+            {
+              "nome": "[Normal] Moeda de Cheffênia",
+              "itemId": 38074,
+              "chance": 20
+            }
+          ]
+        },
+        {
+          "id": "intermediate",
+          "nome": "Intermediate",
+          "notas": [
+            "-90% de dano ao MVP",
+            "+100% de dano recebido",
+            "4x HP do MVP"
+          ],
+          "drops": [
+            {
+              "nome": "[Normal] Moeda de Cheffênia",
+              "itemId": 38074,
+              "chance": 30
+            }
+          ]
+        }
+      ],
+      "mapas": [
+        "chef_bg01"
+      ],
+      "monstros": [
+        "Abelha Rainha (Normal)",
+        "Algoz Eremes (Normal)",
+        "Amon Ra (Normal)",
+        "Atroce (Normal)",
+        "B. Ladrão Dourado (Norm",
+        "Bafomé (Normal)",
+        "Beelzebub (Normal)",
+        "Bispo Decadente (Normal",
+        "Cav. da Tempestade (Nor",
+        "Detale (Normal)",
+        "Doppelganger (Normal)",
+        "Dracula (Normal)",
+        "Drake (Normal)",
+        "Eddga (Normal)",
+        "Espadachim Egnigem (Nor",
+        "Flor do Luar (Normal)",
+        "Freeoni (Normal)",
+        "General Tartaruga (Norm",
+        "Hatti (Normal)",
+        "Ifrit (Normal)",
+        "Kiel D-01 (Normal)",
+        "Ktullanux (Normal)",
+        "Lady Tanee (Normal)",
+        "M. Ferreiro Howard (Nor",
+        "Maya (Normal)",
+        "Memória de Thanatos (No",
+        "Orc Herói (Normal)",
+        "Osiris (Normal)",
+        "Pesar Noturno (Normal)",
+        "Samurai Encarnado (Norm",
+        "Senhor das Trevas (Norm",
+        "Senhor dos Mortos (Norm",
+        "Senhor dos Orcs (Normal",
+        "Serperte Suprema (Norma",
+        "Tao Gunka (Normal)",
+        "Valquíria Randgris (Nor",
+        "Vesper (Normal)"
+      ]
+    },
+    {
+      "id": "tumba-da-honra",
+      "nome": "Tumba da Honra",
+      "tipo": "farm",
+      "ritmoPadrao": 300,
+      "rotuloVariante": "Dificuldade",
+      "variantes": [
+        {
+          "id": "normal",
+          "nome": "Normal",
+          "notas": [
+            "Nível de dificuldade original"
+          ],
+          "drops": [
+            {
+              "nome": "[Normal] Essência de Bio 5",
+              "itemId": 38070,
+              "chance": 20
+            }
+          ]
+        },
+        {
+          "id": "intermediate",
+          "nome": "Intermediate",
+          "notas": [
+            "-90% de dano ao MVP",
+            "+100% de dano recebido",
+            "4x HP do MVP"
+          ],
+          "drops": [
+            {
+              "nome": "[Normal] Essência de Bio 5",
+              "itemId": 38070,
+              "chance": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jardim-sagrado",
+      "nome": "Jardim Sagrado",
+      "tipo": "farm",
+      "ritmoPadrao": 260,
+      "variantes": [
+        {
+          "id": "unico",
+          "nome": "Jardim Sagrado",
+          "notas": [],
+          "drops": [
+            {
+              "nome": "Pó de Éter",
+              "itemId": 1000322,
+              "chance": 3,
+              "grupo": "Utilitário"
+            },
+            {
+              "nome": "Fragmento de Ametista",
+              "itemId": 1000405,
+              "chance": 2,
+              "grupo": "Utilitário"
+            },
+            {
+              "nome": "Ticket Sombrio [Avançado]",
+              "itemId": 30064,
+              "chance": 0.4,
+              "grupo": "Utilitário"
+            },
+            {
+              "nome": "Pó de Éter Abençoado",
+              "itemId": 1000337,
+              "chance": 0.1,
+              "grupo": "Utilitário"
+            },
+            {
+              "nome": "Gema Éter",
+              "itemId": 1000323,
+              "chance": 0.1,
+              "grupo": "Utilitário"
+            },
+            {
+              "nome": "Caixa Areia Estelar de Bruxa [400]",
+              "itemId": 40092,
+              "chance": 0.05,
+              "grupo": "Utilitário"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "campo-do-minerador",
+      "nome": "Campo do Minerador",
+      "tipo": "farm",
+      "ritmoPadrao": 220,
+      "variantes": [
+        {
+          "id": "unico",
+          "nome": "Campo do Minerador",
+          "notas": [],
+          "drops": [
+            {
+              "nome": "Bênção do Ferreiro",
+              "itemId": 6635,
+              "chance": 0.04,
+              "grupo": "Utilitário"
+            },
+            {
+              "nome": "Elunium Enriquecido",
+              "itemId": 7619,
+              "chance": 0.5,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Elunium Perfeito",
+              "itemId": 6241,
+              "chance": 0.3,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Mega-Elunium",
+              "itemId": 6439,
+              "chance": 0.08,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Perfeito",
+              "itemId": 6225,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherium Enriquecido",
+              "itemId": 1000333,
+              "chance": 0.3,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherium Perfeito",
+              "itemId": 1000335,
+              "chance": 0.2,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Etéreo Perfeito",
+              "itemId": 1000371,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Etéreo",
+              "itemId": 1000370,
+              "chance": 0.01,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Oridecon Enriquecido",
+              "itemId": 7620,
+              "chance": 0.5,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Oridecon Perfeito",
+              "itemId": 6240,
+              "chance": 0.3,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Omni-Oridecon",
+              "itemId": 6438,
+              "chance": 0.08,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Perfeito",
+              "itemId": 6226,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherdeocon Enriquecido",
+              "itemId": 1000334,
+              "chance": 0.3,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherdeocon Perfeito",
+              "itemId": 1000336,
+              "chance": 0.2,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Etéreo Perfeito",
+              "itemId": 1000369,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Etéreo",
+              "itemId": 1000368,
+              "chance": 0.01,
+              "grupo": "Minério"
+            }
+          ]
+        }
+      ],
+      "mapas": [
+        "hero_out1"
+      ],
+      "monstros": [
+        "Geodo",
+        "Geodoliant",
+        "Joialiant",
+        "Mineral de Ametista",
+        "Mineral de Jade",
+        "Mineral de Jaspe",
+        "Mineral de Selenita"
+      ]
+    },
+    {
+      "id": "legiao-furia",
+      "nome": "Legião da Fúria",
+      "tipo": "farm",
+      "ritmoPadrao": 380,
+      "variantes": [
+        {
+          "id": "unico",
+          "nome": "Legião da Fúria",
+          "notas": [
+            "Minérios são comuns às três legiões"
+          ],
+          "drops": [
+            {
+              "nome": "Fragmento da Fúria",
+              "itemId": 55590,
+              "chance": 1,
+              "grupo": "Exclusivo"
+            },
+            {
+              "nome": "Pedra de Aprimoramento de Arma (Inferior)",
+              "itemId": 1000430,
+              "chance": 0.3,
+              "grupo": "Exclusivo"
+            },
+            {
+              "nome": "Pedra de Aprimoramento de Armadura (Inferior)",
+              "itemId": 1000434,
+              "chance": 0.3,
+              "grupo": "Exclusivo"
+            },
+            {
+              "nome": "Elunium Enriquecido",
+              "itemId": 7619,
+              "chance": 0.2,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Elunium Perfeito",
+              "itemId": 6241,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Mega-Elunium",
+              "itemId": 6439,
+              "chance": 0.02,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Perfeito",
+              "itemId": 6225,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherium Enriquecido",
+              "itemId": 1000333,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherium Perfeito",
+              "itemId": 1000335,
+              "chance": 0.07,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Etéreo Perfeito",
+              "itemId": 1000371,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Etéreo",
+              "itemId": 1000370,
+              "chance": 0.01,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Oridecon Enriquecido",
+              "itemId": 7620,
+              "chance": 0.2,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Oridecon Perfeito",
+              "itemId": 6240,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Omni-Oridecon",
+              "itemId": 6438,
+              "chance": 0.02,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Perfeito",
+              "itemId": 6226,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherdeocon Enriquecido",
+              "itemId": 1000334,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherdeocon Perfeito",
+              "itemId": 1000336,
+              "chance": 0.07,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Etéreo Perfeito",
+              "itemId": 1000369,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Etéreo",
+              "itemId": 1000368,
+              "chance": 0.01,
+              "grupo": "Minério"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legiao-mal",
+      "nome": "Legião do Mal",
+      "tipo": "farm",
+      "ritmoPadrao": 380,
+      "variantes": [
+        {
+          "id": "unico",
+          "nome": "Legião do Mal",
+          "notas": [
+            "Minérios são comuns às três legiões"
+          ],
+          "drops": [
+            {
+              "nome": "Lasca Maligna",
+              "itemId": 55592,
+              "chance": 1,
+              "grupo": "Exclusivo"
+            },
+            {
+              "nome": "Pedra de Aprimoramento de Acessório (Inferior)",
+              "itemId": 1000438,
+              "chance": 0.3,
+              "grupo": "Exclusivo"
+            },
+            {
+              "nome": "Elunium Enriquecido",
+              "itemId": 7619,
+              "chance": 0.2,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Elunium Perfeito",
+              "itemId": 6241,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Mega-Elunium",
+              "itemId": 6439,
+              "chance": 0.02,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Perfeito",
+              "itemId": 6225,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherium Enriquecido",
+              "itemId": 1000333,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherium Perfeito",
+              "itemId": 1000335,
+              "chance": 0.07,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Etéreo Perfeito",
+              "itemId": 1000371,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Etéreo",
+              "itemId": 1000370,
+              "chance": 0.01,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Oridecon Enriquecido",
+              "itemId": 7620,
+              "chance": 0.2,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Oridecon Perfeito",
+              "itemId": 6240,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Omni-Oridecon",
+              "itemId": 6438,
+              "chance": 0.02,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Perfeito",
+              "itemId": 6226,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherdeocon Enriquecido",
+              "itemId": 1000334,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherdeocon Perfeito",
+              "itemId": 1000336,
+              "chance": 0.07,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Etéreo Perfeito",
+              "itemId": 1000369,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Etéreo",
+              "itemId": 1000368,
+              "chance": 0.01,
+              "grupo": "Minério"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legiao-bem",
+      "nome": "Legião do Bem",
+      "tipo": "farm",
+      "ritmoPadrao": 380,
+      "variantes": [
+        {
+          "id": "unico",
+          "nome": "Legião do Bem",
+          "notas": [
+            "Minérios são comuns às três legiões"
+          ],
+          "drops": [
+            {
+              "nome": "Lasca Abençoada",
+              "itemId": 55591,
+              "chance": 1,
+              "grupo": "Exclusivo"
+            },
+            {
+              "nome": "Pedra de Aprimoramento de Acessório (Inferior)",
+              "itemId": 1000438,
+              "chance": 0.3,
+              "grupo": "Exclusivo"
+            },
+            {
+              "nome": "Elunium Enriquecido",
+              "itemId": 7619,
+              "chance": 0.2,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Elunium Perfeito",
+              "itemId": 6241,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Mega-Elunium",
+              "itemId": 6439,
+              "chance": 0.02,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Perfeito",
+              "itemId": 6225,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherium Enriquecido",
+              "itemId": 1000333,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherium Perfeito",
+              "itemId": 1000335,
+              "chance": 0.07,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Etéreo Perfeito",
+              "itemId": 1000371,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Carnium Etéreo",
+              "itemId": 1000370,
+              "chance": 0.01,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Oridecon Enriquecido",
+              "itemId": 7620,
+              "chance": 0.2,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Oridecon Perfeito",
+              "itemId": 6240,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Omni-Oridecon",
+              "itemId": 6438,
+              "chance": 0.02,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Perfeito",
+              "itemId": 6226,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherdeocon Enriquecido",
+              "itemId": 1000334,
+              "chance": 0.1,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Etherdeocon Perfeito",
+              "itemId": 1000336,
+              "chance": 0.07,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Etéreo Perfeito",
+              "itemId": 1000369,
+              "chance": 0.05,
+              "grupo": "Minério"
+            },
+            {
+              "nome": "Bradium Etéreo",
+              "itemId": 1000368,
+              "chance": 0.01,
+              "grupo": "Minério"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

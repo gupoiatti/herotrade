@@ -166,3 +166,24 @@
     .logo { font-size:34px; }
     .faixa { padding:0 16px; }
   }
+
+/* --- aba de replay -------------------------------------------------------- */
+
+/*
+  A área onde se solta o arquivo. Tracejada de propósito: a borda cheia é usada
+  por caixa que só mostra coisa, e esta espera uma ação.
+*/
+.solta {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 44px 24px; margin-top: 18px; text-align: center;
+  border: 1px dashed var(--borda); border-radius: 10px; background: var(--painel);
+}
+.solta b { font-family: var(--titulo); font-size: 17px; font-weight: 700; }
+.solta span { color: var(--fraco); font-size: 13px; }
+.solta .legenda { max-width: 52ch; line-height: 1.6; }
+.solta code {
+  font-family: var(--mono); font-size: 11.5px; color: var(--claro);
+  background: var(--campo); padding: 1px 5px; border-radius: 4px;
+}
+/* Enquanto o arquivo está sendo arrastado por cima. */
+.solta.sobre { border-color: var(--ouro); background: #f0b4290d; }

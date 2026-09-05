@@ -6,7 +6,26 @@
  * Nada neste arquivo toca o DOM ou a API.
  */
 
-const MOEDA = { hero_points: "Hero Points", zeny: "Zeny", rmt: "RMT" };
+/**
+ * A moeda do site, e a única.
+ *
+ * Era uma tabela com Zeny e RMT também. O Gustavo tirou os dois em 05/09/2026:
+ * o que interessa para as lojas dele é Hero Points, e o coletor deixou de
+ * gravar as outras (ver `MOEDA_COLETADA` no pacote `shared`). Sem duas moedas
+ * na mesma tela, some junto o risco que a §7 do CLAUDE.md descreve — ninguém
+ * pode somar Hero Points com RMT sem taxa de câmbio se só existe uma coluna.
+ */
+const MOEDA_NOME = "Hero Points";
+
+/**
+ * A mesma moeda, como a API a indexa.
+ *
+ * `/v1/itens` devolve os preços num objeto por moeda, porque o banco ainda
+ * guarda ofertas antigas em RMT que não se apagam (§4.2). Ler por esta chave é
+ * o que mantém aquele histórico fora da conta sem mexer nele — e tê-la aqui,
+ * junto do rótulo, deixa a página com **um** lugar que diz qual é a moeda.
+ */
+const MOEDA_CHAVE = "hero_points";
 /* --- bônus de drop ------------------------------------------------------- */
 
 /** Ascensão: +4% de chance de drop por nível, até 15 (+60%). */
@@ -73,6 +92,6 @@ function taxaFinal(basePct, m) {
 }
 
 export {
-  MOEDA, ASC_POR_NIVEL, RATES, CONSUMIVEIS, PETS, GRADES,
+  MOEDA_NOME, MOEDA_CHAVE, ASC_POR_NIVEL, RATES, CONSUMIVEIS, PETS, GRADES,
   bonusPet, bonusConsumiveis, multiplicadorDe, taxaFinal,
 };
