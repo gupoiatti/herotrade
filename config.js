@@ -7,6 +7,9 @@
  * Pages: la a mesma origem e o github.io, que nao tem API nenhuma. Sem
  * preencher, a tela abre e mostra "nunca" sincronizado.
  *
+ * ATENCAO: este endereco e de "quick tunnel" e MUDA a cada vez que o
+ * cloudflared reinicia. Quando mudar, atualize aqui e faca push de novo.
+ *
  * Sem barra no fim.
  */
-window.HEROTRADE_API = "";
+window.HEROTRADE_API = "https://para-protocols-acdbentity-satisfaction.trycloudflare.com";
