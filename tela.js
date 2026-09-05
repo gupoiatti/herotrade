@@ -576,8 +576,14 @@ function desenharConteudo(alvo, mult) {
           ? '<span class="nota">medido em ' + medido.runs +
             (medido.runs === 1 ? " gravação" : " gravações") + "</span>"
           : "") +
-      '<button class="pilula" id="medir" title="Ler uma gravação do jogo e usar o ritmo dela">' +
-      (medido === null ? "medir com um replay" : "somar outra gravação") + "</button>" +
+      // Com medição já feita, o texto fala do **benefício** em vez da ação:
+      // mandar várias gravações é o uso normal, e é o que faz a média valer
+      // alguma coisa. "somar outra" tratava a segunda como exceção.
+      '<button class="pilula" id="medir" title="' +
+      (medido === null
+        ? "Ler uma gravação do jogo e usar o ritmo dela no lugar da estimativa"
+        : "Quanto mais gravações, menos uma run de sorte ou de azar pesa na média") +
+      '">' + (medido === null ? "medir o seu ritmo" : "melhorar a média") + "</button>" +
       "</div>" +
 
     '<div class="resumo">' +
