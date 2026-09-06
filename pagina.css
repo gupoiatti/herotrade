@@ -88,6 +88,15 @@
   .abas button:hover { background:#151a2380; }
   .abas button.ativa { color:var(--texto); border-bottom-color:var(--ouro); }
   .abas .selo { font-family:var(--mono); font-size:11px; font-weight:500; color:var(--fraco); }
+  /* O Replay não é um conteúdo do jogo: é ferramenta. Empurrado para a direita
+     e com a borda de pílula em vez da aba, ele para de disputar leitura com a
+     fila de conteúdos ao lado. */
+  .abas button.ferramenta { margin-left:auto; align-self:center; margin-bottom:6px;
+                            border:1px solid var(--borda); border-radius:99px;
+                            padding:7px 14px; font-size:12.5px; }
+  .abas button.ferramenta:hover { border-color:var(--apagado); color:var(--claro); }
+  .abas button.ferramenta.ativa { border-color:#f0b42966; background:#f0b4291a;
+                                  color:var(--ouro); border-bottom-color:#f0b42966; }
 
   h2.secao { font-family:var(--titulo); font-size:22px; font-weight:700; margin:0;
              letter-spacing:-.01em; }

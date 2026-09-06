@@ -36,13 +36,22 @@ function qtdTexto(q) {
   return q.toFixed(4);
 }
 
+/**
+ * Data e hora por extenso: `06/09/2026 00:29`.
+ *
+ * Sem abreviar por proximidade. "00:29" sozinho não diz de que dia é — e este
+ * número existe justamente para responder "o preço aí é de quando?", pergunta
+ * que a hora solta não responde.
+ */
 function horaDe(iso) {
   if (!iso) return "nunca";
   const d = new Date(iso);
-  const hora = d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-  const mesmoDia = d.toDateString() === new Date().toDateString();
-  return mesmoDia ? hora
-    : d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }) + " " + hora;
+  if (Number.isNaN(d.getTime())) return "nunca";
+  return (
+    d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" }) +
+    " " +
+    d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+  );
 }
 
 /** Texto que veio de dado, nunca direto no innerHTML. */
@@ -487,15 +496,20 @@ function desenharAbas(sessoes) {
   const abas = [{ id: "ranking", nome: "Ranking", selo: String(CONTEUDOS.length) }]
     .concat(CONTEUDOS.map(function (c) {
       return { id: c.id, nome: c.nome, selo: String(varianteDe(c).drops.length) };
-    }))
-    // O selo conta as gravações guardadas: é o que diz se já há ritmo medido
-    // ou só as estimativas das outras abas.
-    .concat([{ id: "replay", nome: "Replay", selo: String(estado.runsLocais.length) }]);
+    }));
 
+  // O Replay entra à parte, com estilo próprio: as outras abas são conteúdos do
+  // jogo e trazem a contagem de drops no selo; esta é uma ferramenta, não tem
+  // drop nenhum, e um "0" ao lado dela só dizia que a conta não se aplica.
   $("abas").innerHTML = abas.map(function (a) {
     return '<button data-aba="' + a.id + '" class="' + (estado.view === a.id ? "ativa" : "") + '">' +
       esc(a.nome) + '<span class="selo">' + a.selo + "</span></button>";
-  }).join("");
+  }).join("") +
+    '<button data-aba="replay" class="ferramenta' +
+    (estado.view === "replay" ? " ativa" : "") + '">Replay' +
+    (estado.runsLocais.length > 0
+      ? '<span class="selo">' + estado.runsLocais.length + "</span>"
+      : "") + "</button>";
 
   Array.prototype.forEach.call(document.querySelectorAll("[data-aba]"), function (b) {
     b.onclick = function () { estado.view = b.getAttribute("data-aba"); desenhar(); };
@@ -632,27 +646,6 @@ function conteudoDoMapa(mapa) {
   return CONTEUDOS.filter(function (c) {
     return (c.mapas || []).indexOf(mapa) >= 0;
   })[0] || null;
-}
-
-/**
- * Data e hora por extenso: `05/09/2026 16:42`.
- *
- * Sem abreviar por proximidade: numa lista em que se decide o que apagar, "16:42"
- * sozinho não diz de que dia é, e duas gravações do mesmo horário em dias
- * diferentes ficariam idênticas.
- *
- * Gravação sem este campo é de antes de ele existir, e aí não há o que inventar
- * — a linha diz que não sabe.
- */
-function quandoTexto(iso) {
-  if (!iso) return "—";
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return "—";
-  return (
-    d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" }) +
-    " " +
-    d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
-  );
 }
 
 /**
@@ -919,7 +912,7 @@ function desenharGravacoes() {
       esc(nomeDoConteudo[r.conteudoId] || "sem conteúdo definido") +
       '<span class="sub">' + esc(r.mapa) + "</span></td>" +
       "<td>" + esc(duracaoTexto(r.duracaoMs)) + "</td>" +
-      '<td class="off" style="font-size:12px">' + esc(quandoTexto(r.enviadoEm)) + "</td>" +
+      '<td class="off" style="font-size:12px">' + esc(r.enviadoEm ? horaDe(r.enviadoEm) : "—") + "</td>" +
       "<td>" + num(r.abates) + "</td>" +
       '<td class="off">' + (taxa === null ? "—" : num(taxa)) + "</td>" +
       '<td style="text-align:right"><button class="pilula" data-apagar="' + esc(r.id) +
