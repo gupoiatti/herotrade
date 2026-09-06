@@ -12,4 +12,4 @@
  *
  * Sem barra no fim.
  */
-window.HEROTRADE_API = "https://already-thousand-domestic-reliable.trycloudflare.com";
+window.HEROTRADE_API = "https://essays-chain-acknowledged-awarded.trycloudflare.com";
