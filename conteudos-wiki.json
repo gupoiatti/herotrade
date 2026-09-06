@@ -170,6 +170,17 @@
             }
           ]
         }
+      ],
+      "mapas": [
+        "sagrado"
+      ],
+      "monstros": [
+        "Aby Furious",
+        "Nezuko",
+        "Princesa Aby",
+        "Siren",
+        "Valkryie Ingrid",
+        "Valkryie Reginleif"
       ]
     },
     {
