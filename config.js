@@ -12,4 +12,4 @@
  *
  * Sem barra no fim.
  */
-window.HEROTRADE_API = "https://bubble-astrology-warrior-surfaces.trycloudflare.com";
+window.HEROTRADE_API = "https://timing-enjoyed-verification-candy.trycloudflare.com";
